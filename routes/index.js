@@ -3,7 +3,7 @@ var application = express();
 var mongo = require('mongodb').MongoClient;
 var obj = require('mongodb').ObjectID;
 
-var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/eventplanner';
+var url = 'mongodb://localhost:27017/eventplanner';
 
 application.get('/', (rq, rs) => {
     var result = [];
