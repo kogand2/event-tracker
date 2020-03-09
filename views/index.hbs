@@ -1,0 +1,27 @@
+<div>
+    <h1 class="header">Event Planner</h1>
+    <form class="inputform" action='/insert' method='POST'>
+        <label>Title</label>
+        <input type="text" id="title" name="title" style="width: 100%">
+        <label>Description</label>
+        <textarea type="text" id="description" name="description" style="width: 100%"></textarea>
+        <label>Date</label>
+        <input type="date" id="date" name="date" placeholder="YYYY-MM-DD">
+        <button type='submit' class="button-primary" style="float: right">SUBMIT EVENT</button>
+    </form>
+</div>
+<div class="get">
+    <div class="events" >
+        {{# each items }}
+            <div class="event">  
+                <form action="/delete" method="POST">
+                    <h2 style="border-bottom: 3px dotted black">{{ this.title }}</h2>
+                    <input style="display: none" type ="text" name="id" value={{_id}}>
+                    <p class="desc">{{ this.description }}</dp>
+                    <h6>{{ this.date }}</h6>
+                    <button type='submit' class='button-primary' style="background: red; border:red;">DELETE</a>
+                </form>
+            </div>
+        {{/each}}
+    </div>
+</div>
